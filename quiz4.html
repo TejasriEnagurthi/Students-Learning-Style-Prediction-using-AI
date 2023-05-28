@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Page</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+
+		h1, h3 {
+			text-align: center;
+		}
+
+		form {
+			max-width: 500px;
+			margin: auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+
+		select {
+			display: block;
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #ccc;
+			width: 100%;
+			background-color: #f9f9f9;
+			cursor: pointer;
+		}
+
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		input[type=submit]:hover {
+			background-color: #3e8e41;
+		}
+
+		#result {
+			max-width: 500px;
+			margin: 20px auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #ccc;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Quiz</h1>
+	<form id="quiz-form">
+		<h3>Question 1:</h3>
+		<p>What is the Hindi word for "hello"?</p>
+		<select name="q1">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Namaste</option>
+			<option value="b">Shukriya</option>
+			<option value="c">Khuda Hafiz</option>
+			<option value="d">Jai Hind</option>
+		</select>
+		<h3>Question 2:</h3>
+		<p>Which animal is considered sacred in India?</p>
+		<select name="q2">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Cow</option>
+			<option value="b">Horse</option>
+			<option value="c">Pig</option>
+			<option value="d">Monkey</option>
+		</select>
+            <h3>Question 3:</h3>
+		<p>What is the name of India's national bird?</p>
+		<select name="q3">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Peacock</option>
+			<option value="b">Crow</option>
+			<option value="c">Sparrow</option>
+			<option value="d">Pigeon</option>
+		</select>
+            <h3>Question 4:</h3>
+		<p>Which festival is known as the "Festival of Lights"?</p>
+		<select name="q4">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Diwali</option>
+			<option value="b">Holi</option>
+			<option value="c">Eid</option>
+			<option value="d">Christmas</option>
+		</select>
+            <h3>Question 5:</h3>
+		<p>Which of these is a popular Indian dish?</p>
+		<select name="q5">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Pizza</option>
+			<option value="b">Sushi</option>
+			<option value="c">Biryani</option>
+			<option value="d">Tacos</option>
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+
+	<div id="result"></div>
+
+	<script>
+		document.getElementById("quiz-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			var q1 = document.getElementsByName("q1")[0].value;
+			var q2 = document.getElementsByName("q2")[0].value;
+			var q3 = document.getElementsByName("q3")[0].value;
+			var q4 = document.getElementsByName("q4")[0].value;
+			var q5 = document.getElementsByName("q5")[0].value;
+			var score = 0;
+			if (q1 === "a") {
+				score++;
+			}
+			if (q2 === "a") {
+				score++;
+			}
+                  if (q3 === "a") {
+				score++;
+			}
+                  if (q4 === "a") {
+				score++;
+			}
+                  if (q5 === "c") {
+				score++;
+			}
+			var result = document.getElementById("result");
+			result.innerHTML = "<h3>Quiz Result:</h3><p>You got " + score + " out of 5 questions correct.</p>";
+                  });
+	</script>
+</body>
+</html>
