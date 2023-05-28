@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Page</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+
+		h1, h3 {
+			text-align: center;
+		}
+
+		form {
+			max-width: 500px;
+			margin: auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+
+		select {
+			display: block;
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #ccc;
+			width: 100%;
+			background-color: #f9f9f9;
+			cursor: pointer;
+		}
+
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		input[type=submit]:hover {
+			background-color: #3e8e41;
+		}
+
+		#result {
+			max-width: 500px;
+			margin: 20px auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #ccc;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Quiz</h1>
+	<form id="quiz-form">
+		<h3>Question 1:</h3>
+		<p>What is the national animal of India?</p>
+		<select name="q1">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Cow</option>
+			<option value="b">Tiger</option>
+			<option value="c">Elephant</option>
+			<option value="d">Lion</option>
+		</select>
+		<h3>Question 2:</h3>
+		<p>Which of these is a musical instrument?</p>
+		<select name="q2">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Train</option>
+			<option value="b">Bicycle</option>
+			<option value="c">Drum</option>
+			<option value="d">Aeroplane</option>
+		</select>
+            <h3>Question 3:</h3>
+		<p>Which of these is a primary color?</p>
+		<select name="q3">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Orange</option>
+			<option value="b">Green</option>
+			<option value="c">Purple</option>
+			<option value="d">Red</option>
+		</select>
+            <h3>Question 4:</h3>
+		<p>Which of these is not a fruit?</p>
+		<select name="q4">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Mango</option>
+			<option value="b">Banana</option>
+			<option value="c">Carrot</option>
+			<option value="d">Apple</option>
+		</select>
+            <h3>Question 5:</h3>
+		<p>Which of these is a shape with three sides?</p>
+		<select name="q5">
+			<option value="">--Please choose an option--</option>
+			<option value="a">Circle</option>
+			<option value="b">Square</option>
+			<option value="c">Triangle</option>
+			<option value="d">Rectangle</option>
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+
+	<div id="result"></div>
+
+	<script>
+		document.getElementById("quiz-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			var q1 = document.getElementsByName("q1")[0].value;
+			var q2 = document.getElementsByName("q2")[0].value;
+			var q3 = document.getElementsByName("q3")[0].value;
+			var q4 = document.getElementsByName("q4")[0].value;
+			var q5 = document.getElementsByName("q5")[0].value;
+			var score = 0;
+			if (q1 === "b") {
+				score++;
+			}
+			if (q2 === "c") {
+				score++;
+			}
+                  if (q3 === "d") {
+				score++;
+			}
+                  if (q4 === "c") {
+				score++;
+			}
+                  if (q5 === "c") {
+				score++;
+			}
+			var result = document.getElementById("result");
+			result.innerHTML = "<h3>Quiz Result:</h3><p>You got " + score + " out of 5 questions correct.</p>";
+                  });
+	</script>
+</body>
+</html>
